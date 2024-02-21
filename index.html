@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://kit.fontawesome.com/6909eb86b5.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          var myForm = document.getElementById('myForm');
+    
+          myForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            axios.post('https://api.web3forms.com/submit', new FormData(myForm))
+              .then(function(response) {
+                console.log(response.data);
+                myForm.reset();
+              })
+              .catch(function(error) {
+                console.error(error);
+              });
+          });
+        });
+      </script>
+       
+</head>
+<body>
+    
+<div id="header">
+    <div class="container">
+        <nav>
+            <!-- <img src="images/logo.png" class="logo"> -->
+            <ul id="sidemenu">
+                <li><a href="#header" >Home</a></li>
+                <li><a href="#about">About</a></li>
+                <!-- <li><a href="#services">Services</a></li> -->
+                <li><a href="#portfolio">My Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <!-- <i class="fa-solid fa-xmark" onclick="closemenu()"></i> -->
+            </ul>
+            <!-- <i class="fa-solid fa-bars" onclick="openmenu()"></i> -->
+        </nav>
+        <div class="header-text">
+            <!-- <p>UI/Ux Designer</p> -->
+            <h1>Hi, I'am <br><span>Yeshwanth Vandrapu</span></h1>
+        </div>
+    </div>
+</div>
+<!---------About----------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/id.jpeg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>Hello! I am a final year undergraduate student majoring in Computer Science and Engineering. Currently on the exciting journey of completing my degree, I am eagerly exploring job opportunities to kickstart my career. My passion lies in web technologies, with a particular focus on the MERN (MongoDB, Express.js, React, Node.js) stack. I am enthusiastic about creating dynamic and innovative web applications that not only meet but exceed user expectations. As I embark on this professional adventure, I am excited to contribute my skills and dedication to a dynamic team, making meaningful contributions in the world of technology.</p>
+                  <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <!-- <p class="tab-links" onclick="opentab('experience')">Experience</p> -->
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                  </div>
+                  <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Languages</span><br>C/C++, Python, JavaScript, SQL</li>
+                        <li><span>Libraries/ Frameworks</span><br>Reactjs, Nodejs, Expressjs, Mongoose</li>
+                        <li><span>Database</span><br>MySQL, MongoDb</li>
+                        <li><span>Tools</span><br>Git/Github, Postman, VScode</li>
+                    </ul>
+                  </div>
+                  <!-- <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2021 - current</span><br>Ui/UX Design Training at ET Institute </li>
+                        <li><span>2021 - 2022</span><br>Team Lead at StarApp LLC.</li>
+                        <li><span>2020 - 2021</span><br>UI/UX Design Executive at Coin Digital Ltd.</li>
+                        <li><span>2020</span><br>Internship at ekart eCommerce.</li>
+                    </ul>
+                  </div> -->
+                  <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2020 - 2024</span><br>Indian Institute of Information Technology Sri City, Chittoor<br><span class="btech" style="color: #ababab;">B.Tech, Computer Science And Engineering &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CGPA: 8.42</span></li>
+                        <li><span>2017 - 2019</span><br>Narayana Junior College<br><span class="btech" style="color: #ababab;">Intermediate, MPC
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CGPA:
+                            10.0</span></li>
+                        <li><span>2017</span><br>Oxford kennedy High School<br><span class="btech" style="color: #ababab;">Secondary Education
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GPA:
+                            10.0</span></li>
+                    </ul>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--------------Services------->
+<!-- <div class="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Design</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+                     soluta temporibus quas quo commodi! Debitis, ab veritatis, 
+                    porro tempora aut quis quod suscipit inventore dignissimos explicabo 
+                    deleniti numquam doloremque ipsa.</p>
+                    <a href="#">learn More</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-crop-simple"></i>
+                <h2>UI/UX Design</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+                     soluta temporibus quas quo commodi! Debitis, ab veritatis, 
+                    porro tempora aut quis quod suscipit inventore dignissimos explicabo 
+                    deleniti numquam doloremque ipsa.</p>
+                    <a href="#">learn More</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-app-store"></i>
+                <h2>App Design</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+                     soluta temporibus quas quo commodi! Debitis, ab veritatis, 
+                    porro tempora aut quis quod suscipit inventore dignissimos explicabo 
+                    deleniti numquam doloremque ipsa.</p>
+                    <a href="#">learn More</a>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!--------------------Work------->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="./images/Job_rec.png">
+                <div class="layer">
+                    <h3>Job Recommendation System</h3>
+                    <!-- <p>Developed a job recommendation system using NLP to preprocess job datasets, including data cleaning, lowercasing,
+                    tokenization, all non alphabets removal, whitespaces removal and stopwords removal. Utilized the NLTK library for text
+                    preprocessing, improving data quality for recommendations. Based on the user’s resume, provide personalized job
+                    recommendations and suggest top 3 suitable role
+                    </p> -->
+                        <a href="https://github.com/YeshwanthSaiSrinivas/Job_Recommender"><i class="fa-brands fa-2x fa-github"></i></a>
+                        <a href="https://jobrecommender.streamlit.app/"><i class="fa-solid fa-2x fa-up-right-from-square"></i></a>
+
+                </div>
+                </div>
+                <div class="work">
+                <img src="./images/Food.png">
+                <div class="layer">
+                    <h3>FoodNest</h3>
+                    <!-- <p>
+                        FoodNest website facilitates seamless food ordering where users can browse through a variety of items, add them to their
+                        cart, and proceed to order. Leveraging a food API, the platform fetches real-time data, enabling users to explore and
+                        select their desired items. Through Firebase integration, the website efficiently manages user interactions, allowing
+                        for smooth CRUD (Create, Read, Update, Delete) operations to ensure a satisfying ordering experience.
+                    </p> -->
+                        <a href="https://github.com/YeshwanthSaiSrinivas/Foodie"><i class="fa-brands fa-2x fa-github"></i></a>
+                        <a href="https://foodie-n5pt.onrender.com/"><i class="fa-solid fa-2x fa-up-right-from-square"></i></a>
+                    
+                </div>
+                </div>
+                <div class="work">
+                    <img src="./images/Mapty.png">
+                    <div class="layer">
+                        <h3>Mapty</h3>
+                        <!-- <p>
+                        I developed a cutting-edge e-commerce platform utilizing the MERN (MongoDB, Express.js, React.js, Node.js) stack,
+                        delivering a responsive and intuitive interface. This platform showcases the latest electronic gadgets, boasting a 98%
+                        user-friendly design to provide customers with a seamless shopping experience. Additionally, robust admin controls were
+                        implemented, facilitating streamlined management operations to ensure efficient oversight and maintenance of the
+                        website.
+                        </p> -->
+                        <a href="https://github.com/YeshwanthSaiSrinivas/Mapty_frontend"><i class="fa-brands fa-2x fa-github"></i></a>
+                        <a href="https://foodie-n5pt.onrender.com/"><i class="fa-solid fa-2x fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="./images/lib.png">
+                    <div class="layer">
+                        <h3>Covid Vaccination Management System</h3>
+                        <!-- <p>
+                            The Java-based vaccination record management application seamlessly integrates with a MySQL database, facilitating
+                            efficient storage and retrieval of data. With features tailored for Covid-related records, such as loading, displaying,
+                            and updating information, users can effortlessly manage a sample set of 50 records. The application offers
+                            functionalities like counting records per category or dose status, enhancing usability and providing valuable insights
+                            into vaccination data.
+                        </p> -->
+                        <a href="https://github.com/NUKASUDHEER/Covid-Vaccination-Management-System.git"><i class="fa-brands fa-2x fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="./images/mic.png">
+                    <div class="layer">
+                        <h3>Lyric Search Engine</h3>
+                        <!-- <p>
+
+                            Developed a project that leverages TF-IDF values to efficiently process users' fragmented song lyrics, generating 10 relevant documents with similar content from a vast dataset of over 23,000 records. Employed cosine similarity for accurate comparison.
+                        </p> -->
+                        <a href="https://github.com/YeshwanthSaiSrinivas/Lyric_retrieval_system"><i class="fa-brands fa-2x fa-github"></i></a>
+                        <!-- <a href="https://drive.google.com/drive/folders/1Pqe_iXtXbLUzGpEtStgGQp_12m2MnpWO"><i class="fa-solid fa-2x fa-up-right-from-square"></i></a> -->
+                    </div>
+                </div>
+                <!-- <div class="work">
+                    <img src="./images/drumkit.png">
+                    <div class="layer">
+                        <h3>Drum Kit</h3>
+                        <p>
+                            The drum kit project utilizes HTML, CSS, and JavaScript to create an interactive interface where users can play sounds
+                            either by clicking on images representing drums or by pressing corresponding keyboard keys. This dual functionality
+                            enhances user experience, allowing for seamless interaction with the virtual drum set using preferred input methods.
+                        </p>
+                        <a href="https://github.com/NUKASUDHEER/DrumKit-Front-End.git"><i class="fa-brands fa-2x fa-github"></i></a>
+                        <a href="https://nukasudheer.github.io/DrumKit-Front-End/"><i
+                                class="fa-solid fa-2x fa-up-right-from-square"></i></a>
+                    </div>
+                </div> -->
+        </div>
+    </div>
+
+</div>
+<!-------------contact Us--------------------------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">contact Me</h1>
+                <p></p>
+                <p></i></p>
+                <a href="mailto: yeshwanthvandrapu585@gmail.com" style ="color: aliceblue; text-decoration: none"><p><i class="fa-solid fa-paper-plane"></i>yeshwanthvandrapu585@gmail.com</p></a>
+                <p><i class="fa-solid fa-phone"></i>+919390317282</p>
+                <!-------Social icons-------------->
+                <div class="social-icons">
+                    <a href="https://github.com/YeshwanthSaiSrinivas"><i class="fa-brands fa fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/yeshwanth-vandrapu-a32174236/"><i class="fa-brands fa-linkedin"></i></a>
+
+                </div>
+
+                <!--------------Resume ----------->
+                <a href="images/S20200010218_Vandrapu_Yeshwanth_Sai_Srinivas.pdf" Download class="btn btn2">Download CV </a>
+            </div>
+                <div class="contact-right">
+
+               <!-------Contact Form------------->     
+                    <form id="myForm" name="submit-to-google-sheet">
+                        <input type="hidden" name="access_key" value="aa57fc89-34b3-4fcf-a1ea-6ed6144b6d61">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                         <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" id="Message"  rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                 </form>
+                 <span id="msg"></span>
+                </div>
+        </div>
+    </div>
+
+
+    <div class="copyright">
+        <!-- <p>Copyright Shanideval . Made With <i class="fa-regular fa-heart"></i></p> -->
+    </div>
+</div>
+
+<!--------------------javascript------->
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+function opentab(tabname){
+for(tablink of tablinks){
+    tablink.classList.remove("active-link");
+}
+for(tabcontent of tabcontents){
+    tabcontent.classList.remove("active-tab");
+}
+event.currentTarget.classList.add("active-link");
+document.getElementById(tabname).classList.add("active-tab");
+}
+
+</script>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemenu.style.right="0";
+    }
+    function closemenu(){
+        closemenu.style.right="-200";
+    }
+</script>
+
+
+
+<!-- <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwVLhwZFP6t50deRbJ_XbmbUjXgaLRBeFhjXq7eJoUz3zCWaPY9uhT5QlhZlBdur6OhYg/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg =document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML="Message send successfully"
+            settimeout(function(){
+                msg.innerHTML=""
+            },500)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script> -->
+</body>
+</html>
